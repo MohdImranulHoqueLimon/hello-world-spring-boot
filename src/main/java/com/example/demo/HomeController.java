@@ -8,6 +8,8 @@ public class HomeController {
 
   @GetMapping("/home")
   public String home() {
-    return "This is my home";
+    String str = "This is my home Germany";
+    System.out.println(str);
+    return str;
   }
 }
