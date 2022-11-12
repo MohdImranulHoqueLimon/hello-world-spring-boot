@@ -26,7 +26,7 @@ pipeline {
 
     post {
       always {
-        archiveArtifacts artifacts: '**/demo-0.0.1-SNAPSHOT.jar', onlyIfSuccessful: true
+        archiveArtifacts artifacts: '**/target/*.jar', onlyIfSuccessful: true
       }
     }
 
