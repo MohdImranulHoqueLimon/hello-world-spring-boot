@@ -8,24 +8,29 @@ pipeline {
   }
 
   stages {
-
     stage("build") {
       steps {
         sh 'mvn clean install'
       }
     }
-
     stage("test") {
       steps {
         echo "testing application"
       }
     }
-
     stage("deploy") {
       steps {
         echo "deploying application"
       }
     }
+
+    post {
+      always {
+        archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+        junit 'build/reports/**/*.xml'
+      }
+    }
+
   }
 
 }
