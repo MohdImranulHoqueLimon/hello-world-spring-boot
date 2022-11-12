@@ -6,7 +6,7 @@ pipeline {
 
     stage("build") {
       steps {
-        executeMavenCommand('mvn clean install')
+        sh "${mvn clean install}"
       }
     }
 
