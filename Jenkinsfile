@@ -23,9 +23,10 @@ pipeline {
         echo "deploying application"
       }
     }
+
     post {
       always {
-        archiveArtifacts artifacts: '**/demo-0.0.1-SNAPSHOT.jar'
+        archiveArtifacts '**/demo-0.0.1-SNAPSHOT.jar'
       }
     }
 
