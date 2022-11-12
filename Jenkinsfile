@@ -20,11 +20,11 @@ pipeline {
     }
     stage("deploy") {
       steps {
-        echo "deploying application"
+        sh 'java -jar demo-0.0.1-SNAPSHOT.jar'
       }
     }
   }
-  
+
   post {
     always {
       archiveArtifacts artifacts: '**/target/*.jar', onlyIfSuccessful: true
